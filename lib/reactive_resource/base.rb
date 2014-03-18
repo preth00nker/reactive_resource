@@ -55,7 +55,7 @@ module ReactiveResource
     # example), or the empty string if +format+ doesn't specify an
     # extension
     def self.extension
-      format.extension.blank? ? "" : ".#{format.extension}"
+      format.extension.blank? ? "" : (!self.include_format_in_path ? "" :  ".#{format.extension}" )
     end
 
     # This method differs from its parent by adding association_prefix
